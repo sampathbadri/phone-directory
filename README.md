@@ -61,9 +61,9 @@ document.getElementById('one').style.display = "block";
 <br>
 <br>
 NAME:<br>
-<input id="nam"  type =text><br><br>
+<input id="nam"  type =text pattern=[a-z][A-Z] ><br><br>
 PHONE:<br>
-<input id="mob"  pattern=[0-9]{10}><br><p>details being added:</p>
+<input id="mob"  pattern=[0-9]{10} ><br><p>details being added:</p>
 <p>name:<span id="re"><br></span></p>
 <p>mobile:<span id="res"></span></p>
 
@@ -77,8 +77,25 @@ PHONE:<br>
     res.innerHTML = mob.value;
   };
 </script>
-<button onclick="functional1()">ADD</button>
+<button onclick="functional11()">ADD</button>
 <script>
+function functional11(){
+var x=document.getElementById('nam').value;
+var y=document.getElementById('mob').value;
+if ( x  != '' && y != ''){
+functional1();
+}
+else if(x != '' && y == ''){
+alert("enter phone number");
+}
+else if(x == '' && y != ''){
+alert("enter name");
+}
+else{
+alert("enter name and phone number");}
+
+
+}
 function functional1(){
 document.getElementById('one').style.display = "block";
    document.getElementById('mine').style.display = "none"; 
